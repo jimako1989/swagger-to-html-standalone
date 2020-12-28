@@ -1,17 +1,19 @@
-![Docker Automated build](https://img.shields.io/docker/automated/yousan/swagger-yaml-to-html)
+# Swagger YAML/JSON into HTML on stand-alone
 
-# Swagger YAML into HTML
+Creating HTML OpenAPI Document from swagger files (yaml/json) on stand-alone environment.
 
-![ScreenShot](https://github.com/yousan/swagger-yaml-to-html/blob/master/screenshot-1.png?raw=true "ScreenShot")
+![ScreenShot](./api_docs_toppage.png?raw=true "ScreenShot1")
+
+This html file doesn't fetch any resources from the internet.
+![ScreenShot](./developper_tool.png?raw=true "ScreenShot2")
 
 # How To Use
 ```
-docker run --rm -i yousan/swagger-yaml-to-html < petstore.yaml > petstore.html
+python swagger-to-html-standalone.py < /path/to/api.(yaml|json) > doc.html
 ```
 
-from https://gist.github.com/oseiskar/dbd51a3727fc96dcf5ed189fca491fb3
+FYI: making YAML 1.2 a superset of JSON.
+c.f. https://en.wikipedia.org/wiki/YAML
 
-
-# Dockerhub
-
-https://hub.docker.com/repository/docker/yousan/swagger-yaml-to-html/
+# :warning: NOTE
+**ALSO COPY CSS AND JS FILES** distributed from Swagger  not only HTML to show up the HTML API document correctly.

@@ -10,7 +10,7 @@
 #
 """
 Usage:
-    python swagger-yaml-to-html.py < /path/to/api.yaml > doc.html
+    python swagger-to-html-standalone.py < /path/to/api.(yaml|json) > doc.html
 """
 import yaml, json, sys
 
@@ -20,8 +20,7 @@ TEMPLATE = """
 <head>
   <meta charset="UTF-8">
   <title>Swagger UI</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.24.2/swagger-ui.css" >
+  <link rel="stylesheet" type="text/css" href="./3.24.2/swagger-ui.css" >
   <style>
     html
     {
@@ -43,8 +42,8 @@ TEMPLATE = """
 </head>
 <body>
 <div id="swagger-ui"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.24.2/swagger-ui-bundle.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.24.2/swagger-ui-standalone-preset.js"> </script>
+<script src="./3.24.2/swagger-ui-bundle.js"> </script>
+<script src="./3.24.2/swagger-ui-standalone-preset.js"> </script>
 <script>
 window.onload = function() {
   var spec = %s;
